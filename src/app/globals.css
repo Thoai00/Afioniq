@@ -22,3 +22,195 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-pulse {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* globals.css */
+.crt-overlay {
+  background: linear-gradient(0deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.1) 3%, 
+    transparent 3%, 
+    transparent 97%,
+    rgba(255, 255, 255, 0.1) 97%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  background-size: 100% 2px;
+  animation: scan 8s linear infinite;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+@keyframes scan {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
+}
+
+.neon-text-red {
+  text-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066, 0 0 30px #ff0066;
+}
+
+.neon-text-blue {
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
+
+.cyber-hud {
+  border: 2px solid #00ffff;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1rem 2rem;
+  clip-path: polygon(0 0, 95% 0, 100% 100%, 5% 100%);
+}
+
+
+/* Loading animation */
+@keyframes progress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.animate-progress {
+  animation: progress 2s ease-in-out;
+}
+
+/* Pixel effect */
+.pixel-border {
+  box-shadow: 
+    4px 0 0 #9F7AEA,
+    -4px 0 0 #9F7AEA,
+    0 4px 0 #9F7AEA,
+    0 -4px 0 #9F7AEA;
+}
+
+@keyframes glow {
+  0% { filter: drop-shadow(0 0 2px #00ff88); }
+  50% { filter: drop-shadow(0 0 8px #00ff88); }
+  100% { filter: drop-shadow(0 0 2px #00ff88); }
+}
+
+@keyframes grid-pulse {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.1; }
+}
+
+.neon-text {
+  text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #00ff88;
+}
+
+.glow-box {
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+.glow-box-cyan {
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
+}
+
+.glow-box-purple {
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.3);
+}
+
+.animate-grid-pulse {
+  animation: grid-pulse 3s ease-in-out infinite;
+}
+
+@keyframes icon-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-icon-float {
+  animation: icon-float 3s ease-in-out infinite;
+}
+
+.glow-button {
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+@keyframes scroll-indicator {
+  0% { transform: translateY(-10px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}
+
+.animate-scroll-indicator {
+  animation: scroll-indicator 2s infinite;
+}
+
+@keyframes grid-pulse {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 0.1; }
+}
+
+@keyframes neon-glow {
+  0% { text-shadow: 0 0 5px #00ff8840; }
+  50% { text-shadow: 0 0 20px #00ff88a0; }
+  100% { text-shadow: 0 0 5px #00ff8840; }
+}
+
+@keyframes scroll-indicator {
+  0% { transform: translateY(-10px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}
+
+@keyframes icon-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.neon-text {
+  animation: neon-glow 2s ease-in-out infinite;
+}
+
+.glow-box-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-box-hover:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.15);
+}
+
+.glow-button {
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.3);
+}
+
+.animate-grid-pulse {
+  animation: grid-pulse 3s ease-in-out infinite;
+}
+
+.animate-scroll-indicator {
+  animation: scroll-indicator 2s ease-in-out infinite;
+}
+
+.animate-icon-float {
+  animation: icon-float 3s ease-in-out infinite;
+}
+.font-orbitron { font-family: 'Orbitron', sans-serif; }
+.glow-effect { box-shadow: 0 0 30px rgba(0, 247, 255, 0.2); }
+.arena-panel { position: relative; }
+.arena-panel::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #00f7ff, transparent 50%);
+  z-index: -1;
+  border-radius: inherit;
+}
